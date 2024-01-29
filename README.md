@@ -9,3 +9,11 @@ https://discord.gg/Cb5Ag3kUXd
 
 ![image](https://github.com/Shiromorningstar/sdw-clothes/assets/91198430/c6e3a9e5-38b7-4e67-a060-bf714ddc945c)
 
+
+Programmed : 
+
+Add languages support with ox lib
+
+Add Possibility for okoknotify or Ox lib
+
+Add verifications before displaying progressbar
