@@ -32,3 +32,8 @@ Config.Female = {
     Watch = -1,
     Wrist = -1
 }
+
+Config.ClothesKeybind = {
+    active = true,
+    defaultkeybind = 'j'
+}
