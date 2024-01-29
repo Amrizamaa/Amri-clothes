@@ -11,7 +11,9 @@ Config.Male = {
     Shirt = 15,
     Ears = -1,
     Vest = 0,
-    Chain = 0 
+    Chain = 0,
+    Watch = -1,
+    Wrist = -1
 }
 
 Config.Female = {
@@ -26,5 +28,7 @@ Config.Female = {
     Shirt = 15,
     Ears = -1,
     Vest = 0,
-    Chain = 0 
+    Chain = 0,
+    Watch = -1,
+    Wrist = -1
 }
