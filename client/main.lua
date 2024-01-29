@@ -1373,7 +1373,7 @@ AddEventHandler('sdw-clothes:client:shoes', function()
     local gender = IsMpPed(ped) 
     if gender == 'Male' then
         if Drawable ~= Config.Male.Shoes and not IsAnim then
-v
+            TriggerEvent('sdw-progressBar:removingClothes', 'sdw_shoes')
             IsAnim = true
             shoesonoff()
             SetPedComponentVariation(ped, 6, Config.Male.Shoes, 0, 2)
