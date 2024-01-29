@@ -80,3 +80,19 @@ Please Add This To Your Ox_Inventory Folder "ox_inventory/data/items.lua"
 			export = 'sdw-clothes.bag'
 		}
 	},
+['watch'] = {
+	label = 'Montre',
+	weight = 50,
+	stack = false,
+	client = {
+		export = 'sdw-clothes.watch'
+	}
+},
+['wrist'] = {
+	label = 'Bracelet',
+	weight = 50,
+	stack = false,
+	client = {
+		export = 'sdw-clothes.wrist'
+	}
+},
