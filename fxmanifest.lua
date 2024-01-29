@@ -2,12 +2,12 @@ fx_version 'cerulean'
 games {'gta5'}
 lua54 'yes'
 
-author 'Shiro Morningstar'
-description 'sdw-clothies | OX Clothing Menu As Items Data | https://discord.gg/Cb5Ag3kUXd'
+author 'Amrizama & Shiro Morningstar'
+description 'Amri-clothes | OX Clothing Menu As Items Data | Fork from sdw-clothies'
+version '1.0.0'
 
 shared_scripts{
 	'@ox_lib/init.lua',
-	'@es_extended/imports.lua',
 	'config.lua',
 	'utils/utils.lua'
 } 
@@ -21,7 +21,6 @@ server_scripts {
 }
 
 dependency{
-	'es_extended',
 	'ox_inventory',
 	'ox_lib'
 }
