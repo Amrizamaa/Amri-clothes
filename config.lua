@@ -1,8 +1,8 @@
 Config = {}
 Config.Male = {
     Torso = 15,
-    Jeans = 14,
-    Shoes = 5,
+    Jeans = 61,
+    Shoes = 34,
     Bag = 0,
     Gloves = 15,
     Hat = -1,
