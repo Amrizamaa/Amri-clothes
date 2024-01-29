@@ -290,6 +290,7 @@ exports('helmet', function(slot, data)
     if gender == 'Male' then
         if theGender == gender then
             if GetPedPropIndex(ped,0) == Config.Male.Hat and not IsAnim  then
+                TriggerEvent('sdw-progressBar:WearingClothes', 'sdw_helmet')
                 IsAnim = true
                 LocalPlayer.state.invBusy = true
                 hatofon()
@@ -331,6 +332,7 @@ exports('helmet', function(slot, data)
     elseif gender == 'Female' then
         if theGender == gender then 
             if GetPedPropIndex(ped, 0) == Config.Female.Hat and not IsAnim  then
+                TriggerEvent('sdw-progressBar:WearingClothes', 'sdw_helmet')
                 IsAnim = true
                 LocalPlayer.state.invBusy = true
                 hatofon()
@@ -385,6 +387,7 @@ exports('torso', function(slot, data)
     if gender == 'Male' then
         if theGender == gender then
             if GetPedDrawableVariation(ped, 11) == Config.Male.Torso and not IsAnim then
+                TriggerEvent('sdw-progressBar:WearingClothes', 'sdw_torso')
                 IsAnim = true
                 LocalPlayer.state.invBusy = true 
                 torsoonoff()
@@ -427,6 +430,7 @@ exports('torso', function(slot, data)
     elseif gender == 'Female' then
         if theGender == gender then
             if GetPedDrawableVariation(ped, 11) == Config.Female.Torso and not IsAnim then
+                TriggerEvent('sdw-progressBar:WearingClothes', 'sdw_torso')
                 IsAnim = true
                 LocalPlayer.state.invBusy = true
                 torsoonoff()
@@ -480,10 +484,11 @@ exports('pants', function(slot, data)
     if gender == 'Male' then
         if theGender == gender then
             if GetPedDrawableVariation(ped, 4) == Config.Male.Jeans and not IsAnim then
+                TriggerEvent('sdw-progressBar:WearingClothes', 'sdw_pants')
                 IsAnim = true
                 LocalPlayer.state.invBusy = true
                 jeansonoff()
-                SetPedComponentVariation(ped, 4, pants1, pants2, 0)  
+                SetPedComponentVariation(ped, 4, pants1, pants2, 0)
                 TriggerServerEvent('remove:clothes', pants1, pants2, theType, metadata)
                 IsAnim = false
                 LocalPlayer.state.invBusy = false
@@ -521,10 +526,11 @@ exports('pants', function(slot, data)
     elseif gender == 'Female' then
         if theGender == gender then
             if GetPedDrawableVariation(ped, 4) == Config.Female.Jeans and not IsAnim then
+                TriggerEvent('sdw-progressBar:WearingClothes', 'sdw_pants')
                 IsAnim = true
                 LocalPlayer.state.invBusy = true
                 jeansonoff()
-                SetPedComponentVariation(ped, 4, pants1, pants2, 0)  
+                SetPedComponentVariation(ped, 4, pants1, pants2, 0)
                 TriggerServerEvent('remove:clothes', pants1, pants2, theType, metadata)
                 IsAnim = false
                 LocalPlayer.state.invBusy = false
@@ -572,10 +578,11 @@ exports('shoes', function(slot, data)
     if gender == 'Male' then
         if theGender == gender then
             if GetPedDrawableVariation(ped, 6) == Config.Male.Shoes and not IsAnim then
+                TriggerEvent('sdw-progressBar:WearingClothes', 'sdw_shoes')
                 IsAnim = true
                 LocalPlayer.state.invBusy = true
                 shoesonoff()
-                SetPedComponentVariation(ped, 6, shoes1, shoes2, 2)  
+                SetPedComponentVariation(ped, 6, shoes1, shoes2, 2)
                 TriggerServerEvent('remove:clothes', shoes1, shoes2, theType, metadata)
                 IsAnim = false
                 LocalPlayer.state.invBusy = false
@@ -613,6 +620,7 @@ exports('shoes', function(slot, data)
     elseif gender == 'Female' then
         if theGender == gender then
             if GetPedDrawableVariation(ped, 6) == Config.Female.Shoes and not IsAnim then
+                TriggerEvent('sdw-progressBar:WearingClothes', 'sdw_shoes')
                 IsAnim = true
                 LocalPlayer.state.invBusy = true
                 shoesonoff()
@@ -664,10 +672,11 @@ exports('bag', function(slot, data)
     if gender == 'Male' then
         if theGender == gender then
             if GetPedDrawableVariation(ped, 5) == Config.Male.Bag and not IsAnim then
+                TriggerEvent('sdw-progressBar:WearingClothes', 'sdw_bag')
                 IsAnim = true
                 LocalPlayer.state.invBusy = true
                 bagonoff()
-                SetPedComponentVariation(ped, 5, bag1, bag2, 2)  
+                SetPedComponentVariation(ped, 5, bag1, bag2, 2)
                 TriggerServerEvent('remove:clothes', bag1, bag2, theType, metadata)
                 IsAnim = false
                 LocalPlayer.state.invBusy = false
@@ -705,10 +714,11 @@ exports('bag', function(slot, data)
     elseif gender == 'Female' then
         if theGender == gender then 
             if GetPedDrawableVariation(ped, 5) == Config.Female.Bag and not IsAnim then
+                TriggerEvent('sdw-progressBar:WearingClothes', 'sdw_bag')
                 IsAnim = true
                 LocalPlayer.state.invBusy = true
                 bagonoff()
-                SetPedComponentVariation(ped, 5, bag1, bag2, 2)  
+                SetPedComponentVariation(ped, 5, bag1, bag2, 2)
                 TriggerServerEvent('remove:clothes', bag1, bag2, theType, metadata)
                 IsAnim = false
                 LocalPlayer.state.invBusy = false
@@ -756,6 +766,7 @@ exports('mask', function(slot, data)
     if gender == 'Male' then
         if theGender == gender then
             if GetPedDrawableVariation(ped, 1) == Config.Male.Mask and not IsAnim then
+                TriggerEvent('sdw-progressBar:WearingClothes', 'sdw_mask')
                 IsAnim = true
                 LocalPlayer.state.invBusy = true
                 maskonoff()
@@ -797,6 +808,7 @@ exports('mask', function(slot, data)
     elseif gender == 'Female' then
         if theGender == gender then
             if GetPedDrawableVariation(ped, 1) == Config.Female.Mask and not IsAnim then
+                TriggerEvent('sdw-progressBar:WearingClothes', 'sdw_mask')
                 IsAnim = true
                 LocalPlayer.state.invBusy = true
                 maskonoff()
@@ -848,6 +860,7 @@ exports('ears', function(slot, data)
     if gender == 'Male' then
         if theGender == gender then
             if GetPedPropIndex(ped, 2) == Config.Male.Ears and not IsAnim  then
+                TriggerEvent('sdw-progressBar:WearingClothes', 'sdw_ears')
                 IsAnim = true
                 LocalPlayer.state.invBusy = true
                 earsonoff()
@@ -888,6 +901,7 @@ exports('ears', function(slot, data)
     elseif gender == 'Female' then
         if theGender == gender then
             if GetPedPropIndex(ped, 2) == Config.Female.Ears and not IsAnim  then
+                TriggerEvent('sdw-progressBar:WearingClothes', 'sdw_ears')
                 IsAnim = true
                 LocalPlayer.state.invBusy = true
                 earsonoff()
@@ -935,11 +949,11 @@ exports('glasses', function(slot, data)
     local metadata = data.metadata
     local glasses1 = data.metadata.accessories
     local glasses2 = data.metadata.accessories2
-    local Drawable = GetPedPropIndex(ped, 1)
     local gender = IsMpPed(ped)
     if gender == 'Male' then
         if theGender == gender then
-            if Drawable == Config.Male.Glasses and not IsAnim  then
+            if GetPedPropIndex(ped, 1) == Config.Male.Glasses and not IsAnim  then
+                TriggerEvent('sdw-progressBar:WearingClothes', 'sdw_glasses')
                 IsAnim = true
                 LocalPlayer.state.invBusy = true
                 glassesonoff()
@@ -979,7 +993,8 @@ exports('glasses', function(slot, data)
         end
     elseif gender == 'Female' then
         if theGender == gender then
-            if Drawable == Config.Female.Glasses and not IsAnim  then
+            if GetPedPropIndex(ped, 1) == Config.Female.Glasses and not IsAnim  then
+                TriggerEvent('sdw-progressBar:WearingClothes', 'sdw_glasses')
                 IsAnim = true
                 LocalPlayer.state.invBusy = true
                 glassesonoff()
@@ -1031,6 +1046,7 @@ exports('vest', function(slot, data)
     if gender == 'Male' then
         if theGender == gender then
             if GetPedDrawableVariation(ped, 9) == Config.Male.Vest and not IsAnim then
+                TriggerEvent('sdw-progressBar:WearingClothes', 'sdw_vest')
                 IsAnim = true
                 LocalPlayer.state.invBusy = true
                 vestonoff()
@@ -1071,6 +1087,7 @@ exports('vest', function(slot, data)
     elseif gender == 'Female' then
         if theGender == gender then
             if GetPedDrawableVariation(ped, 9) == Config.Female.Vest and not IsAnim then
+                TriggerEvent('sdw-progressBar:WearingClothes', 'sdw_vest')
                 IsAnim = true
                 LocalPlayer.state.invBusy = true
                 vestonoff()
@@ -1111,8 +1128,10 @@ exports('vest', function(slot, data)
     end
 end)
 
+if Config.ClothesKeybind.active then
+RegisterKeyMapping('clothesmenu', 'sdw-clohes Menu', 'keyboard', Config.ClothesKeybind.defaultkeybind)
+end
 
-RegisterKeyMapping('clothesmenu', 'sdw-clohes Menu', 'keyboard', 'J')
 RegisterCommand("clothesmenu", function(source, args, rawCommand)
     lib.registerContext({
         id = 'Clothing_Menu',
@@ -1182,7 +1201,7 @@ RegisterCommand("clothesmenu", function(source, args, rawCommand)
         },
     })
     lib.showContext('Clothing_Menu')
-end)
+end, false)
 
 RegisterCommand("shirt", function(source, args, rawCommand)
     TriggerEvent('sdw-clothes:client:shirt')
@@ -1222,7 +1241,6 @@ RegisterCommand("wrist", function(source, args, rawCommand)
 end, false)
 
 AddEventHandler('sdw-clothes:client:shirt', function()
-    TriggerEvent('sdw-progressBar:removingClothes', 'sdw_torso')
     local ped = PlayerPedId()
     local theProp = 'torso'
     local DrawableTorso = GetPedDrawableVariation(ped, 11) -- Torso 1
@@ -1234,6 +1252,7 @@ AddEventHandler('sdw-clothes:client:shirt', function()
     local gender = IsMpPed(ped) 
     if gender == 'Male' then
         if DrawableTorso ~= Config.Male.Torso and not IsAnim then
+            TriggerEvent('sdw-progressBar:removingClothes', 'sdw_torso')
             IsAnim = true
             torsoonoff()
             SetPedComponentVariation(ped, 11, Config.Male.Torso, 0, 0)
@@ -1260,9 +1279,9 @@ AddEventHandler('sdw-clothes:client:shirt', function()
         end
     elseif gender == 'Female' then
         if DrawableTorso ~= Config.Female.Torso and not IsAnim then
+            TriggerEvent('sdw-progressBar:removingClothes', 'sdw_torso')
             IsAnim = true
             torsoonoff()
-            TriggerEvent('sdw-progressBar:removingClothes', 'sdw_torso')
             SetPedComponentVariation(ped, 11, Config.Female.Torso, 0, 0)
             SetPedComponentVariation(ped, 8,  Config.Female.Shirt, 0, 0)
             if DrawableGloves ~= Config.Female.Gloves then
@@ -1289,7 +1308,6 @@ AddEventHandler('sdw-clothes:client:shirt', function()
 end)
 
 AddEventHandler('sdw-clothes:client:pants', function()
-    TriggerEvent('sdw-progressBar:removingClothes', 'sdw_pants')
     local ped = PlayerPedId()
     local theProp = 'jeans'
     local Drawable = GetPedDrawableVariation(ped, 4)
@@ -1297,6 +1315,7 @@ AddEventHandler('sdw-clothes:client:pants', function()
     local gender = IsMpPed(ped) 
     if gender == 'Male' then
         if Drawable ~= Config.Male.Jeans and not IsAnim then
+            TriggerEvent('sdw-progressBar:removingClothes', 'sdw_pants')
             IsAnim = true
             jeansonoff()
             SetPedComponentVariation(ped, 4, Config.Male.Jeans, 1, 2)
@@ -1320,6 +1339,7 @@ AddEventHandler('sdw-clothes:client:pants', function()
         end
     elseif gender == 'Female' then
         if Drawable ~= Config.Female.Jeans and not IsAnim then
+            TriggerEvent('sdw-progressBar:removingClothes', 'sdw_pants')
             IsAnim = true
             jeansonoff()
             SetPedComponentVariation(ped, 4, Config.Female.Jeans, 1, 2)
@@ -1346,7 +1366,6 @@ AddEventHandler('sdw-clothes:client:pants', function()
 end) 
 
 AddEventHandler('sdw-clothes:client:shoes', function()
-    TriggerEvent('sdw-progressBar:removingClothes', 'sdw_shoes')
     local ped = PlayerPedId()
     local theProp = 'shoes'
     local Drawable = GetPedDrawableVariation(ped, 6)
@@ -1354,6 +1373,7 @@ AddEventHandler('sdw-clothes:client:shoes', function()
     local gender = IsMpPed(ped) 
     if gender == 'Male' then
         if Drawable ~= Config.Male.Shoes and not IsAnim then
+v
             IsAnim = true
             shoesonoff()
             SetPedComponentVariation(ped, 6, Config.Male.Shoes, 0, 2)
@@ -1377,6 +1397,7 @@ AddEventHandler('sdw-clothes:client:shoes', function()
         end
     elseif gender == 'Female' then
         if Drawable ~= Config.Female.Shoes and not IsAnim then
+            TriggerEvent('sdw-progressBar:removingClothes', 'sdw_shoes')
             IsAnim = true
             shoesonoff()
             SetPedComponentVariation(ped, 6, Config.Female.Shoes, 0, 2)
@@ -1402,7 +1423,6 @@ AddEventHandler('sdw-clothes:client:shoes', function()
 end) 
 
 AddEventHandler('sdw-clothes:client:mask', function()
-    TriggerEvent('sdw-progressBar:removingClothes', 'sdw_mask')
     local ped = PlayerPedId()
     local theProp = 'mask'
     local Drawable = GetPedDrawableVariation(ped, 1)
@@ -1410,6 +1430,7 @@ AddEventHandler('sdw-clothes:client:mask', function()
     local gender = IsMpPed(ped) 
     if gender == 'Male' then
         if Drawable ~= Config.Male.Mask and not IsAnim then
+            TriggerEvent('sdw-progressBar:removingClothes', 'sdw_mask')
             IsAnim = true
             maskonoff()
             SetPedComponentVariation(ped, 1, Config.Male.Mask, 0, 2)
@@ -1433,6 +1454,7 @@ AddEventHandler('sdw-clothes:client:mask', function()
         end
     elseif gender == 'Female' then
         if Drawable ~= Config.Female.Mask and not IsAnim then
+            TriggerEvent('sdw-progressBar:removingClothes', 'sdw_mask')
             IsAnim = true
             maskonoff()
             SetPedComponentVariation(ped, 1, Config.Female.Mask, 0, 2)
@@ -1458,14 +1480,13 @@ AddEventHandler('sdw-clothes:client:mask', function()
 end) 
 
 AddEventHandler('sdw-clothes:client:hat', function()
-    TriggerEvent('sdw-progressBar:removingClothes', 'sdw_hat')
     local ped = PlayerPedId()
     local theProp = 'helmet'
-    local Drawable = GetPedPropIndex(ped, 0)
     local Texture = GetPedPropTextureIndex(ped, 0)
     local gender = IsMpPed(ped) 
     if gender == 'Male' then
-        if Drawable ~= Config.Male.Hat and not IsAnim then
+        if GetPedPropIndex(ped, 0) ~= Config.Male.Hat and not IsAnim then
+            TriggerEvent('sdw-progressBar:removingClothes', 'sdw_hat')
             IsAnim = true
             hatofon()
             ClearPedProp(ped, 0)
@@ -1487,7 +1508,8 @@ AddEventHandler('sdw-clothes:client:hat', function()
             })
         end
     elseif gender == 'Female' then
-        if Drawable ~= Config.Female.Hat and not IsAnim then
+        if GetPedPropIndex(ped, 0) ~= Config.Female.Hat and not IsAnim then
+            TriggerEvent('sdw-progressBar:removingClothes', 'sdw_hat')
             IsAnim = true
             hatofon()
             ClearPedProp(ped, 0)
@@ -1512,7 +1534,6 @@ AddEventHandler('sdw-clothes:client:hat', function()
 end) 
 
 AddEventHandler('sdw-clothes:client:bag', function()
-    TriggerEvent('sdw-progressBar:removingClothes', 'sdw_bag')
     local ped = PlayerPedId()
     local theProp = 'bag'
     local Drawable = GetPedDrawableVariation(ped, 5)
@@ -1520,6 +1541,7 @@ AddEventHandler('sdw-clothes:client:bag', function()
     local gender = IsMpPed(ped) 
     if gender == 'Male' then
         if Drawable ~= Config.Male.Bag and not IsAnim then
+            TriggerEvent('sdw-progressBar:removingClothes', 'sdw_bag')
             IsAnim = true
             bagonoff()
             SetPedComponentVariation(ped, 5, Config.Male.Bag, 0, 2)
@@ -1542,6 +1564,7 @@ AddEventHandler('sdw-clothes:client:bag', function()
         end
     elseif gender == 'Female' then
         if Drawable ~= Config.Female.Bag and not IsAnim  then
+            TriggerEvent('sdw-progressBar:removingClothes', 'sdw_bag')
             IsAnim = true
             bagonoff()
             SetPedComponentVariation(ped, 5, Config.Female.Bag, 0, 2)
@@ -1565,7 +1588,6 @@ AddEventHandler('sdw-clothes:client:bag', function()
     end
 end) 
 AddEventHandler('sdw-clothes:client:glasses', function()
-    TriggerEvent('sdw-progressBar:removingClothes', 'sdw_glasses')
     local ped = PlayerPedId()
     local theProp = 'glasses'
     local Drawable = GetPedPropIndex(ped, 1)
@@ -1573,6 +1595,7 @@ AddEventHandler('sdw-clothes:client:glasses', function()
     local gender = IsMpPed(ped) 
     if gender == 'Male' then
         if Drawable ~= Config.Male.Glasses and not IsAnim then
+            TriggerEvent('sdw-progressBar:removingClothes', 'sdw_glasses')
             IsAnim = true
             glassesonoff()
             ClearPedProp(ped, 1)
@@ -1595,6 +1618,7 @@ AddEventHandler('sdw-clothes:client:glasses', function()
         end
     elseif gender == 'Female' then
         if Drawable ~= Config.Female.Glasses and not IsAnim  then
+            TriggerEvent('sdw-progressBar:removingClothes', 'sdw_glasses')
             IsAnim = true
             glassesonoff()
             ClearPedProp(ped, 1)
@@ -1620,7 +1644,6 @@ AddEventHandler('sdw-clothes:client:glasses', function()
 end) 
 
 AddEventHandler('sdw-clothes:client:vest', function()
-    TriggerEvent('sdw-progressBar:removingClothes', 'sdw_vest')
     local ped = PlayerPedId()
     local theType = 'vest'
     local vest1 = GetPedDrawableVariation(ped, 9)
@@ -1628,6 +1651,7 @@ AddEventHandler('sdw-clothes:client:vest', function()
     local gender = IsMpPed(ped) 
     if gender == 'Male' then
         if vest1 ~= Config.Male.Vest and not IsAnim then
+            TriggerEvent('sdw-progressBar:removingClothes', 'sdw_vest')
             IsAnim = true
             vestonoff()
             SetPedComponentVariation(ped, 9, Config.Male.Vest, 0, 0)
@@ -1650,6 +1674,7 @@ AddEventHandler('sdw-clothes:client:vest', function()
         end
     elseif gender == 'Female' then
         if vest1 ~= Config.Female.Vest and not IsAnim then
+            TriggerEvent('sdw-progressBar:removingClothes', 'sdw_vest')
             IsAnim = true
             vestonoff()
             SetPedComponentVariation(ped, 9, Config.Female.Vest, 0, 0)
@@ -1674,7 +1699,6 @@ AddEventHandler('sdw-clothes:client:vest', function()
     
 end) 
 AddEventHandler('sdw-clothes:client:ears', function()
-    TriggerEvent('sdw-progressBar:removingClothes', 'sdw_ears')
     local ped = PlayerPedId()
     local theType = 'ears'
     local skin1 = GetPedPropIndex(ped, 2)
@@ -1682,6 +1706,7 @@ AddEventHandler('sdw-clothes:client:ears', function()
     local gender = IsMpPed(ped) 
     if gender == 'Male' then
         if GetPedPropIndex(ped, 2) ~= Config.Male.Ears and not IsAnim  then
+            TriggerEvent('sdw-progressBar:removingClothes', 'sdw_ears')
             IsAnim = true
             earsonoff()
             ClearPedProp(ped, 2)
@@ -1704,6 +1729,7 @@ AddEventHandler('sdw-clothes:client:ears', function()
         end
     elseif gender == 'Female' then
         if GetPedPropIndex(ped, 2) ~= Config.Female.Ears and not IsAnim  then
+            TriggerEvent('sdw-progressBar:removingClothes', 'sdw_ears')
             IsAnim = true
             earsonoff()
             ClearPedProp(ped, 2)
@@ -1727,7 +1753,6 @@ AddEventHandler('sdw-clothes:client:ears', function()
     end
 end) 
 AddEventHandler('sdw-clothes:client:chain', function()
-    TriggerEvent('sdw-progressBar:removingClothes', 'sdw_chain')
     local ped = PlayerPedId()
     local theType = 'chain'
     local skin1 = GetPedDrawableVariation(ped, 7)
@@ -1735,6 +1760,7 @@ AddEventHandler('sdw-clothes:client:chain', function()
     local gender = IsMpPed(ped) 
     if gender == 'Male' then
         if GetPedDrawableVariation(ped, 7) ~= Config.Male.Chain and not IsAnim  then
+            TriggerEvent('sdw-progressBar:removingClothes', 'sdw_chain')
             IsAnim = true
             chainonoff()
             SetPedComponentVariation(ped, 7, Config.Male.Chain, 0, 2)
@@ -1757,6 +1783,7 @@ AddEventHandler('sdw-clothes:client:chain', function()
         end
     elseif gender == 'Female' then
         if GetPedDrawableVariation(ped, 7) ~= Config.Female.Chain and not IsAnim  then
+            TriggerEvent('sdw-progressBar:removingClothes', 'sdw_chain')
             IsAnim = true
             chainonoff()
             SetPedComponentVariation(ped, 7, Config.Female.Chain, 0, 2)
@@ -1961,4 +1988,3 @@ RegisterNetEvent('sdw.msfclothes:Notification')
 AddEventHandler('sdw.msfclothes:Notification', function(data)
     lib.notify(data)
 end)
-
