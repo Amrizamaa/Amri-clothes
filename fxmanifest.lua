@@ -10,7 +10,9 @@ shared_scripts{
 	'@ox_lib/init.lua',
 	'config.lua',
 	'utils/utils.lua'
-} 
+}
+
+files {'locales/*.json',}
 
 client_scripts {
 	'client/main.lua'
@@ -23,4 +25,9 @@ server_scripts {
 dependency{
 	'ox_inventory',
 	'ox_lib'
+}
+
+ox_libs {
+    'menu',
+    'locale'
 }

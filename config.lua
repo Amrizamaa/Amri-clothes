@@ -37,3 +37,5 @@ Config.ClothesKeybind = {
     active = true,
     defaultkeybind = 'j'
 }
+
+Config.Notify = 'okok' -- okok or ox 

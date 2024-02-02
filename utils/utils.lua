@@ -12,7 +12,7 @@ AddEventHandler('sdw-progressBar:removingClothes', function(UnWearing)
     if UnWearing == 'sdw_torso' then
         local success = lib.progressBar({
             duration = 3000,
-            label = '🧥 | Removing Shirts!',
+            label = locale('removetorso'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -22,7 +22,7 @@ AddEventHandler('sdw-progressBar:removingClothes', function(UnWearing)
     elseif UnWearing == 'sdw_pants' then
         local success = lib.progressBar({
             duration = 3000,
-            label = '👖 | Removing Pants!',
+            label = locale('removepants'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -32,7 +32,7 @@ AddEventHandler('sdw-progressBar:removingClothes', function(UnWearing)
     elseif UnWearing == 'sdw_shoes' then
         local success = lib.progressBar({
             duration = 3000,
-            label = '👟 | Removing Shoes!',
+            label = locale('removeshoes'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -42,7 +42,7 @@ AddEventHandler('sdw-progressBar:removingClothes', function(UnWearing)
     elseif UnWearing == 'sdw_mask' then
         local success = lib.progressBar({
             duration = 3000,
-            label = '😷 | Removing Mask!',
+            label = locale('removemask'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -52,7 +52,7 @@ AddEventHandler('sdw-progressBar:removingClothes', function(UnWearing)
     elseif UnWearing == 'sdw_hat' then
         local success = lib.progressBar({
             duration = 3000,
-            label = '🎩 | Removing Hat!',
+            label = locale('removehat'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -62,7 +62,7 @@ AddEventHandler('sdw-progressBar:removingClothes', function(UnWearing)
     elseif UnWearing == 'sdw_bag' then
         local success = lib.progressBar({
             duration = 3000,
-            label = '🎒 | Removing Bag!',
+            label = locale('removebag'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -72,7 +72,7 @@ AddEventHandler('sdw-progressBar:removingClothes', function(UnWearing)
     elseif UnWearing == 'sdw_glasses' then
         local success = lib.progressBar({
             duration = 3000,
-            label = '👓 | Removing Glasses!',
+            label = locale('removeglasses'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -82,7 +82,7 @@ AddEventHandler('sdw-progressBar:removingClothes', function(UnWearing)
     elseif UnWearing == 'sdw_vest' then
         local success = lib.progressBar({
             duration = 3000,
-            label = '🦺 | Removing Vest!',
+            label = locale('removevest'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -92,7 +92,7 @@ AddEventHandler('sdw-progressBar:removingClothes', function(UnWearing)
     elseif UnWearing == 'sdw_ears' then
         local success = lib.progressBar({
             duration = 3000,
-            label = '🎧 | Removing Ears Accessories!',
+            label = locale('removeearaccessories'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -102,7 +102,7 @@ AddEventHandler('sdw-progressBar:removingClothes', function(UnWearing)
     elseif UnWearing == 'sdw_chain' then
         local success = lib.progressBar({
             duration = 3000,
-            label = '🧣 | Removing Chain!',
+            label = locale('removechain'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -112,7 +112,7 @@ AddEventHandler('sdw-progressBar:removingClothes', function(UnWearing)
     elseif UnWearing == 'sdw_watch' then
         local success = lib.progressBar({
             duration = 2500,
-            label = '⌚ | Retire sa montre',
+            label = locale('removewatch'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -122,7 +122,7 @@ AddEventHandler('sdw-progressBar:removingClothes', function(UnWearing)
     elseif UnWearing == 'sdw_bracelet' then
         local success = lib.progressBar({
             duration = 3500,
-            label = '📿 | Removing Bracelet!',
+            label = locale('removebracelet'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -136,7 +136,7 @@ AddEventHandler('sdw-progressBar:WearingClothes', function(Wearing)
     if Wearing == 'sdw_torso' then
         local success = lib.progressBar({
             duration = 3000,
-            label = '🧥 | Wearing Shirts!',
+            label = locale('weartorso'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -146,7 +146,7 @@ AddEventHandler('sdw-progressBar:WearingClothes', function(Wearing)
     elseif Wearing == 'sdw_pants' then
         local success = lib.progressBar({
             duration = 3000,
-            label = '👖 | Wearing Pants!',
+            label = locale('wearpants'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -156,7 +156,7 @@ AddEventHandler('sdw-progressBar:WearingClothes', function(Wearing)
     elseif Wearing == 'sdw_shoes' then
         local success = lib.progressBar({
             duration = 3000,
-            label = '👟 | Wearing Shoes!',
+            label = locale('wearshoes'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -166,7 +166,7 @@ AddEventHandler('sdw-progressBar:WearingClothes', function(Wearing)
     elseif Wearing == 'sdw_mask' then
         local success = lib.progressBar({
             duration = 3000,
-            label = '😷 | Wearing Mask!',
+            label = locale('wearmask'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -176,7 +176,7 @@ AddEventHandler('sdw-progressBar:WearingClothes', function(Wearing)
     elseif Wearing == 'sdw_hat' then
         local success = lib.progressBar({
             duration = 3000,
-            label = '🎩 | Wearing Hat!',
+            label = locale('wearhat'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -186,7 +186,7 @@ AddEventHandler('sdw-progressBar:WearingClothes', function(Wearing)
     elseif Wearing == 'sdw_bag' then
         local success = lib.progressBar({
             duration = 3000,
-            label = '🎒 | Wearing Bag!',
+            label = locale('wearbag'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -196,7 +196,7 @@ AddEventHandler('sdw-progressBar:WearingClothes', function(Wearing)
     elseif Wearing == 'sdw_glasses' then
         local success = lib.progressBar({
             duration = 3000,
-            label = '👓 | Wearing Glasses!',
+            label = locale('wearglasses'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -206,7 +206,7 @@ AddEventHandler('sdw-progressBar:WearingClothes', function(Wearing)
     elseif Wearing == 'sdw_vest' then
         local success = lib.progressBar({
             duration = 3000,
-            label = '🦺 | Wearing Vest!',
+            label = locale('wearvest'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -216,7 +216,7 @@ AddEventHandler('sdw-progressBar:WearingClothes', function(Wearing)
     elseif Wearing == 'sdw_ears' then
         local success = lib.progressBar({
             duration = 3000,
-            label = '🎧 | Wearing Ears Accessories!',
+            label = locale('wearearaccessories'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -226,7 +226,7 @@ AddEventHandler('sdw-progressBar:WearingClothes', function(Wearing)
     elseif Wearing == 'sdw_chain' then
         local success = lib.progressBar({
             duration = 2500,
-            label = '🧣 | Wearing Chain!',
+            label = locale('wearchain'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -236,7 +236,7 @@ AddEventHandler('sdw-progressBar:WearingClothes', function(Wearing)
     elseif Wearing == 'sdw_watch' then
         local success = lib.progressBar({
             duration = 2500,
-            label = '⌚ | Mets sa montre',
+            label = locale('wearwatch'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -246,7 +246,7 @@ AddEventHandler('sdw-progressBar:WearingClothes', function(Wearing)
     elseif Wearing == 'sdw_wrist' then
         local success = lib.progressBar({
             duration = 2500,
-            label = '📿 | Enfile son bracelet',
+            label = locale('wearwrist'),
             useWhileDead = false,
             canCancel = true,
             disable = {

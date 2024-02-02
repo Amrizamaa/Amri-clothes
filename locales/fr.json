@@ -1,0 +1,27 @@
+{
+    "removetorso": "🧥 | Retire le haut...",
+    "removepants": "👖 | Retire le bas...",
+    "removeshoes": "👟 | Retire les chaussures...",
+    "removemask": "😷 | Retire le masque...",
+    "removehats": "🎩 | Retire le chapeau...",
+    "removebags": "🎒 | Retire le sac...",
+    "removeglasses": "👓 | Retire les lunettes...",
+    "removevest": "🧥 | Retire le gilet...",
+    "removeearaccessories": "👂 | Retire les accessoires d'oreilles...",
+    "removechain": "🧣 | Retire la chaîne / écharpe...",
+    "remonvewatch": "⌚ | Retire la montre...",
+    "removebracelet": "📿 | Retire le bracelet...",
+
+    "wearingtorso": "🧥 | Enfile le haut...",
+    "wearingpants": "👖 | Enfile le bas...",
+    "wearingshoes": "👟 | Enfile les chaussures...",
+    "wearingmask": "😷 | Enfile le masque...",
+    "wearinghats": "🎩 | Enfile le chapeau...",
+    "wearingbags": "🎒 | Enfile le sac...",
+    "wearingglasses": "👓 | Enfile les lunettes...",
+    "wearingvest": "🧥 | Enfile le gilet...",
+    "wearingearaccessories": "👂 | Enfile les accessoires d'oreilles...",
+    "wearingchain": "🧣 | Enfile la chaîne / écharpe...",
+    "wearingwatch": "⌚ | Enfile la montre...",
+    "wearingbracelet": "📿 | Enfile le bracelet..."
+}
