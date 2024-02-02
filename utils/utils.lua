@@ -52,7 +52,7 @@ AddEventHandler('sdw-progressBar:removingClothes', function(UnWearing)
     elseif UnWearing == 'sdw_hat' then
         local success = lib.progressBar({
             duration = 3000,
-            label = locale('removehat'),
+            label = locale('removehats'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -62,7 +62,7 @@ AddEventHandler('sdw-progressBar:removingClothes', function(UnWearing)
     elseif UnWearing == 'sdw_bag' then
         local success = lib.progressBar({
             duration = 3000,
-            label = locale('removebag'),
+            label = locale('removebags'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -176,7 +176,7 @@ AddEventHandler('sdw-progressBar:WearingClothes', function(Wearing)
     elseif Wearing == 'sdw_hat' then
         local success = lib.progressBar({
             duration = 3000,
-            label = locale('wearhat'),
+            label = locale('wearhats'),
             useWhileDead = false,
             canCancel = true,
             disable = {
@@ -186,7 +186,7 @@ AddEventHandler('sdw-progressBar:WearingClothes', function(Wearing)
     elseif Wearing == 'sdw_bag' then
         local success = lib.progressBar({
             duration = 3000,
-            label = locale('wearbag'),
+            label = locale('wearbags'),
             useWhileDead = false,
             canCancel = true,
             disable = {

@@ -21,28 +21,28 @@ exports('watch', function(slot, data)
                 LocalPlayer.state.invBusy = false
             else
                 if Config.Notify == 'ox' then
-                lib.notify('error_input_watch1', 'SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_watch1', 'SYSTEM', locale('alreadywearingsomething'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('alreadywearingsomething'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
             end
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'êtes pas une femme.', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('wronsexclothes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'êtes pas une femme.', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('wronsexclothes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     elseif gender == 'Female' then
         if theGender == gender then
-            if GetPedPropIndex(ped, 6) == Config.Female.watch and not IsAnim  then
+            if GetPedPropIndex(ped,6) == Config.Female.Watch and not IsAnim  then
                 TriggerEvent('sdw-progressBar:WearingClothes', 'sdw_watch')
-                IsAnim = true
                 LocalPlayer.state.invBusy = true
+                IsAnim = true
                 watchonoff()
                 SetPedPropIndex(ped, 6, watch1, watch2, true)
                 TriggerServerEvent('remove:clothes', watch1, watch2, theType, metadata)  -- Fix don't remove item from inventory when using watch
@@ -50,20 +50,20 @@ exports('watch', function(slot, data)
                 LocalPlayer.state.invBusy = false
             else
                 if Config.Notify == 'ox' then
-                    lib.notify('error_input_watch1', 'SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                    lib.notify('error_input_watch1', 'SYSTEM', locale('alreadywearingsomething'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                     elseif Config.Notify == 'okok' then
-                    exports['okokNotify']:Alert('SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'error', playSound)
+                    exports['okokNotify']:Alert('SYSTEM', locale('alreadywearingsomething'), 5000, 'error', playSound)
                     else
-                    print('Please check your config.lua to ensure you have the correct notification system')
+                    print(locale('NotifySystemWrong'))
                     end
             end
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'êtes pas un homme.', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('wronsexclothes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'êtes pas un homme.', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('wronsexclothes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     end
@@ -90,20 +90,20 @@ exports('wrist', function(slot, data)
                 LocalPlayer.state.invBusy = false
             else
                 if Config.Notify == 'ox' then
-                    lib.notify('error_input_wrist1', 'SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                    lib.notify('error_input_wrist1', 'SYSTEM', locale('alreadywearingsomething'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                     elseif Config.Notify == 'okok' then
-                    exports['okokNotify']:Alert('SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'error', playSound)
+                    exports['okokNotify']:Alert('SYSTEM', locale('alreadywearingsomething'), 5000, 'error', playSound)
                     else
-                    print('Please check your config.lua to ensure you have the correct notification system')
+                    print(locale('NotifySystemWrong'))
                     end
             end
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'êtes pas une femme.', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('wronsexclothes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'êtes pas une femme.', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('wronsexclothes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     elseif gender == 'Female' then
@@ -119,20 +119,20 @@ exports('wrist', function(slot, data)
                 LocalPlayer.state.invBusy = false
             else
                 if Config.Notify == 'ox' then
-                    lib.notify('error_input_wrist1', 'SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                    lib.notify('error_input_wrist1', 'SYSTEM', locale('alreadywearingsomething'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                     elseif Config.Notify == 'okok' then
-                    exports['okokNotify']:Alert('SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'error', playSound)
+                    exports['okokNotify']:Alert('SYSTEM', locale('alreadywearingsomething'), 5000, 'error', playSound)
                     else
-                    print('Please check your config.lua to ensure you have the correct notification system')
+                    print(locale('NotifySystemWrong'))
                     end
             end
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'êtes pas un homme.', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('wronsexclothes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'êtes pas un homme.', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('wronsexclothes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     end
@@ -158,20 +158,20 @@ exports('chain', function(slot, data)
                 LocalPlayer.state.invBusy = false
             else
                 if Config.Notify == 'ox' then
-                    lib.notify('error_input_chain1', 'SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                    lib.notify('error_input_chain1', 'SYSTEM', locale('alreadywearingsomething'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                     elseif Config.Notify == 'okok' then
-                    exports['okokNotify']:Alert('SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'error', playSound)
+                    exports['okokNotify']:Alert('SYSTEM', locale('alreadywearingsomething'), 5000, 'error', playSound)
                     else
-                    print('Please check your config.lua to ensure you have the correct notification system')
+                    print(locale('NotifySystemWrong'))
                     end
             end
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'êtes pas une femme.', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('wronsexclothes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'êtes pas une femme.', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('wronsexclothes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     elseif gender == 'Female' then
@@ -187,20 +187,20 @@ exports('chain', function(slot, data)
                 LocalPlayer.state.invBusy = false
             else
                 if Config.Notify == 'ox' then
-                    lib.notify('error_input_chain1', 'SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                    lib.notify('error_input_chain1', 'SYSTEM', locale('alreadywearingsomething'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                     elseif Config.Notify == 'okok' then
-                    exports['okokNotify']:Alert('SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'error', playSound)
+                    exports['okokNotify']:Alert('SYSTEM', locale('alreadywearingsomething'), 5000, 'error', playSound)
                     else
-                    print('Please check your config.lua to ensure you have the correct notification system')
+                    print(locale('NotifySystemWrong'))
                     end
             end
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'êtes pas un homme.', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('wronsexclothes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'êtes pas un homme.', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('wronsexclothes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     end
@@ -227,20 +227,20 @@ exports('helmet', function(slot, data)
                 LocalPlayer.state.invBusy = false
             else
                 if Config.Notify == 'ox' then
-                    lib.notify('error_input_hat1', 'SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                    lib.notify('error_input_hat1', 'SYSTEM', locale('alreadywearingsomething'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                     elseif Config.Notify == 'okok' then
-                    exports['okokNotify']:Alert('SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'error', playSound)
+                    exports['okokNotify']:Alert('SYSTEM', locale('alreadywearingsomething'), 5000, 'error', playSound)
                     else
-                    print('Please check your config.lua to ensure you have the correct notification system')
+                    print(locale('NotifySystemWrong'))
                     end
             end
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'êtes pas une femme.', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('wronsexclothes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'êtes pas une femme.', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('wronsexclothes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end        
     elseif gender == 'Female' then
@@ -256,20 +256,20 @@ exports('helmet', function(slot, data)
                 LocalPlayer.state.invBusy = false
             else
                 if Config.Notify == 'ox' then
-                    lib.notify('error_input_hat1', 'SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                    lib.notify('error_input_hat1', 'SYSTEM', locale('alreadywearingsomething'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                     elseif Config.Notify == 'okok' then
-                    exports['okokNotify']:Alert('SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'error', playSound)
+                    exports['okokNotify']:Alert('SYSTEM', locale('alreadywearingsomething'), 5000, 'error', playSound)
                     else
-                    print('Please check your config.lua to ensure you have the correct notification system')
+                    print(locale('NotifySystemWrong'))
                     end
             end
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'êtes pas un homme.', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('wronsexclothes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'êtes pas un homme.', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('wronsexclothes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     end
@@ -292,7 +292,7 @@ exports('torso', function(slot, data)
                 TriggerEvent('sdw-progressBar:WearingClothes', 'sdw_torso')
                 IsAnim = true
                 LocalPlayer.state.invBusy = true 
-                torsoonoff()
+                Torsoonoff()
                 SetPedComponentVariation(ped, 11, torso1, torso2, 3) -- Torso 1
                 SetPedComponentVariation(ped, 3, arms1, arms2, 0) -- Arms 1
                 SetPedComponentVariation(ped, 8, tshirt1, tshirt2, 2) -- Tshirt 1
@@ -301,20 +301,20 @@ exports('torso', function(slot, data)
                 LocalPlayer.state.invBusy = false
             else
                 if Config.Notify == 'ox' then
-                    lib.notify('error_input_chain1', 'SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                    lib.notify('error_input_chain1', 'SYSTEM', locale('alreadywearingsomething'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                     elseif Config.Notify == 'okok' then
-                    exports['okokNotify']:Alert('SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'error', playSound)
+                    exports['okokNotify']:Alert('SYSTEM', locale('alreadywearingsomething'), 5000, 'error', playSound)
                     else
-                    print('Please check your config.lua to ensure you have the correct notification system')
+                    print(locale('NotifySystemWrong'))
                     end
             end
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'êtes pas une femme.', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('wronsexclothes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'êtes pas une femme.', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('wronsexclothes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     elseif gender == 'Female' then
@@ -323,7 +323,7 @@ exports('torso', function(slot, data)
                 TriggerEvent('sdw-progressBar:WearingClothes', 'sdw_torso')
                 IsAnim = true
                 LocalPlayer.state.invBusy = true
-                torsoonoff()
+                Torsoonoff()
                 SetPedComponentVariation(ped, 11, torso1, torso2, 3) -- Torso 1
                 SetPedComponentVariation(ped, 3, arms1, arms2, 0) -- Arms 1
                 SetPedComponentVariation(ped, 8, tshirt1, tshirt2, 2) -- Tshirt 1
@@ -332,20 +332,20 @@ exports('torso', function(slot, data)
                 LocalPlayer.state.invBusy = false
             else
                 if Config.Notify == 'ox' then
-                    lib.notify('error_input', 'SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                    lib.notify('error_input', 'SYSTEM', locale('alreadywearingsomething'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                     elseif Config.Notify == 'okok' then
-                    exports['okokNotify']:Alert('SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'error', playSound)
+                    exports['okokNotify']:Alert('SYSTEM', locale('alreadywearingsomething'), 5000, 'error', playSound)
                     else
-                    print('Please check your config.lua to ensure you have the correct notification system')
+                    print(locale('NotifySystemWrong'))
                     end
             end
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'êtes pas un homme.', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('wronsexclothes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'êtes pas un homme.', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('wronsexclothes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     end
@@ -372,20 +372,20 @@ exports('pants', function(slot, data)
                 LocalPlayer.state.invBusy = false
             else
                 if Config.Notify == 'ox' then
-                    lib.notify('error_input', 'SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                    lib.notify('error_input', 'SYSTEM', locale('alreadywearingsomething'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                     elseif Config.Notify == 'okok' then
-                    exports['okokNotify']:Alert('SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'error', playSound)
+                    exports['okokNotify']:Alert('SYSTEM', locale('alreadywearingsomething'), 5000, 'error', playSound)
                     else
-                    print('Please check your config.lua to ensure you have the correct notification system')
+                    print(locale('NotifySystemWrong'))
                     end
             end
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'êtes pas une femme.', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('wronsexclothes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'êtes pas une femme.', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('wronsexclothes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     elseif gender == 'Female' then
@@ -401,20 +401,20 @@ exports('pants', function(slot, data)
                 LocalPlayer.state.invBusy = false
             else
                 if Config.Notify == 'ox' then
-                    lib.notify('error_input', 'SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                    lib.notify('error_input', 'SYSTEM', locale('alreadywearingsomething'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                     elseif Config.Notify == 'okok' then
-                    exports['okokNotify']:Alert('SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'error', playSound)
+                    exports['okokNotify']:Alert('SYSTEM', locale('alreadywearingsomething'), 5000, 'error', playSound)
                     else
-                    print('Please check your config.lua to ensure you have the correct notification system')
+                    print(locale('NotifySystemWrong'))
                     end
             end
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'êtes pas un homme.', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('wronsexclothes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'êtes pas un homme.', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('wronsexclothes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     end
@@ -441,20 +441,20 @@ exports('shoes', function(slot, data)
                 LocalPlayer.state.invBusy = false
             else
                 if Config.Notify == 'ox' then
-                    lib.notify('error_input', 'SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                    lib.notify('error_input', 'SYSTEM', locale('alreadywearingsomething'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                     elseif Config.Notify == 'okok' then
-                    exports['okokNotify']:Alert('SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'error', playSound)
+                    exports['okokNotify']:Alert('SYSTEM', locale('alreadywearingsomething'), 5000, 'error', playSound)
                     else
-                    print('Please check your config.lua to ensure you have the correct notification system')
+                    print(locale('NotifySystemWrong'))
                     end
             end
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'êtes pas une femme.', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('wronsexclothes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'êtes pas une femme.', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('wronsexclothes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     elseif gender == 'Female' then
@@ -470,20 +470,20 @@ exports('shoes', function(slot, data)
                 LocalPlayer.state.invBusy = false
             else
                 if Config.Notify == 'ox' then
-                    lib.notify('error_input', 'SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                    lib.notify('error_input', 'SYSTEM', locale('alreadywearingsomething'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                     elseif Config.Notify == 'okok' then
-                    exports['okokNotify']:Alert('SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'error', playSound)
+                    exports['okokNotify']:Alert('SYSTEM', locale('alreadywearingsomething'), 5000, 'error', playSound)
                     else
-                    print('Please check your config.lua to ensure you have the correct notification system')
+                    print(locale('NotifySystemWrong'))
                     end
             end
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'êtes pas un homme.', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('wronsexclothes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'êtes pas un homme.', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('wronsexclothes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     end
@@ -510,20 +510,20 @@ exports('bag', function(slot, data)
                 LocalPlayer.state.invBusy = false
             else
                 if Config.Notify == 'ox' then
-                    lib.notify('error_input', 'SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                    lib.notify('error_input', 'SYSTEM', locale('alreadywearingsomething'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                     elseif Config.Notify == 'okok' then
-                    exports['okokNotify']:Alert('SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'error', playSound)
+                    exports['okokNotify']:Alert('SYSTEM', locale('alreadywearingsomething'), 5000, 'error', playSound)
                     else
-                    print('Please check your config.lua to ensure you have the correct notification system')
+                    print(locale('NotifySystemWrong'))
                     end
             end
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'êtes pas une femme.', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('wronsexclothes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'êtes pas une femme.', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('wronsexclothes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     elseif gender == 'Female' then
@@ -539,20 +539,20 @@ exports('bag', function(slot, data)
                 LocalPlayer.state.invBusy = false
             else
                 if Config.Notify == 'ox' then
-                    lib.notify('error_input', 'SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                    lib.notify('error_input', 'SYSTEM', locale('alreadywearingsomething'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                     elseif Config.Notify == 'okok' then
-                    exports['okokNotify']:Alert('SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'error', playSound)
+                    exports['okokNotify']:Alert('SYSTEM', locale('alreadywearingsomething'), 5000, 'error', playSound)
                     else
-                    print('Please check your config.lua to ensure you have the correct notification system')
+                    print(locale('NotifySystemWrong'))
                     end
             end
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'êtes pas un homme.', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('wronsexclothes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'êtes pas un homme.', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('wronsexclothes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     end
@@ -579,20 +579,20 @@ exports('mask', function(slot, data)
                 LocalPlayer.state.invBusy = false
             else
                 if Config.Notify == 'ox' then
-                    lib.notify('error_input', 'SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                    lib.notify('error_input', 'SYSTEM', locale('alreadywearingsomething'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                     elseif Config.Notify == 'okok' then
-                    exports['okokNotify']:Alert('SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'error', playSound)
+                    exports['okokNotify']:Alert('SYSTEM', locale('alreadywearingsomething'), 5000, 'error', playSound)
                     else
-                    print('Please check your config.lua to ensure you have the correct notification system')
+                    print(locale('NotifySystemWrong'))
                     end
             end
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'êtes pas une femme.', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('wronsexclothes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'êtes pas une femme.', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('wronsexclothes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     elseif gender == 'Female' then
@@ -608,20 +608,20 @@ exports('mask', function(slot, data)
                 LocalPlayer.state.invBusy = false
             else
                 if Config.Notify == 'ox' then
-                    lib.notify('error_input', 'SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                    lib.notify('error_input', 'SYSTEM', locale('alreadywearingsomething'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                     elseif Config.Notify == 'okok' then
-                    exports['okokNotify']:Alert('SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'error', playSound)
+                    exports['okokNotify']:Alert('SYSTEM', locale('alreadywearingsomething'), 5000, 'error', playSound)
                     else
-                    print('Please check your config.lua to ensure you have the correct notification system')
+                    print(locale('NotifySystemWrong'))
                     end
             end
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'êtes pas un homme.', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('wronsexclothes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'êtes pas un homme.', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('wronsexclothes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     end
@@ -648,20 +648,20 @@ exports('ears', function(slot, data)
                 LocalPlayer.state.invBusy = false
             else
                 if Config.Notify == 'ox' then
-                    lib.notify('error_input', 'SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                    lib.notify('error_input', 'SYSTEM', locale('alreadywearingsomething'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                     elseif Config.Notify == 'okok' then
-                    exports['okokNotify']:Alert('SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'error', playSound)
+                    exports['okokNotify']:Alert('SYSTEM', locale('alreadywearingsomething'), 5000, 'error', playSound)
                     else
-                    print('Please check your config.lua to ensure you have the correct notification system')
+                    print(locale('NotifySystemWrong'))
                     end
             end
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'êtes pas une femme.', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('wronsexclothes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'êtes pas une femme.', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('wronsexclothes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     elseif gender == 'Female' then
@@ -677,20 +677,20 @@ exports('ears', function(slot, data)
                 IsAnim = false
             else
                 if Config.Notify == 'ox' then
-                    lib.notify('error_input', 'SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                    lib.notify('error_input', 'SYSTEM', locale('alreadywearingsomething'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                     elseif Config.Notify == 'okok' then
-                    exports['okokNotify']:Alert('SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'error', playSound)
+                    exports['okokNotify']:Alert('SYSTEM', locale('alreadywearingsomething'), 5000, 'error', playSound)
                     else
-                    print('Please check your config.lua to ensure you have the correct notification system')
+                    print(locale('NotifySystemWrong'))
                     end
             end
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'êtes pas un homme.', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('wronsexclothes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'êtes pas un homme.', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('wronsexclothes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     end
@@ -717,20 +717,20 @@ exports('glasses', function(slot, data)
                 LocalPlayer.state.invBusy = false
             else
                 if Config.Notify == 'ox' then
-                    lib.notify('error_input', 'SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                    lib.notify('error_input', 'SYSTEM', locale('alreadywearingsomething'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                     elseif Config.Notify == 'okok' then
-                    exports['okokNotify']:Alert('SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'error', playSound)
+                    exports['okokNotify']:Alert('SYSTEM', locale('alreadywearingsomething'), 5000, 'error', playSound)
                     else
-                    print('Please check your config.lua to ensure you have the correct notification system')
+                    print(locale('NotifySystemWrong'))
                     end
             end
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'êtes pas une femme.', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('wronsexclothes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'êtes pas une femme.', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('wronsexclothes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     elseif gender == 'Female' then
@@ -746,20 +746,20 @@ exports('glasses', function(slot, data)
                 LocalPlayer.state.invBusy = false
             else
                 if Config.Notify == 'ox' then
-                    lib.notify('error_input', 'SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                    lib.notify('error_input', 'SYSTEM', locale('alreadywearingsomething'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                     elseif Config.Notify == 'okok' then
-                    exports['okokNotify']:Alert('SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'error', playSound)
+                    exports['okokNotify']:Alert('SYSTEM', locale('alreadywearingsomething'), 5000, 'error', playSound)
                     else
-                    print('Please check your config.lua to ensure you have the correct notification system')
+                    print(locale('NotifySystemWrong'))
                     end
             end
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'êtes pas un homme.', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('wronsexclothes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'êtes pas un homme.', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('wronsexclothes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     end
@@ -786,20 +786,20 @@ exports('vest', function(slot, data)
                 LocalPlayer.state.invBusy = false
             else
                 if Config.Notify == 'ox' then
-                    lib.notify('error_input', 'SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                    lib.notify('error_input', 'SYSTEM', locale('alreadywearingsomething'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                     elseif Config.Notify == 'okok' then
-                    exports['okokNotify']:Alert('SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'error', playSound)
+                    exports['okokNotify']:Alert('SYSTEM', locale('alreadywearingsomething'), 5000, 'error', playSound)
                     else
-                    print('Please check your config.lua to ensure you have the correct notification system')
+                    print(locale('NotifySystemWrong'))
                     end
             end
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'êtes pas une femme.', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('wronsexclothes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'êtes pas une femme.', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('wronsexclothes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     elseif gender == 'Female' then
@@ -815,20 +815,20 @@ exports('vest', function(slot, data)
                 LocalPlayer.state.invBusy = false
             else
                 if Config.Notify == 'ox' then
-                    lib.notify('error_input', 'SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                    lib.notify('error_input', 'SYSTEM', locale('alreadywearingsomething'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                     elseif Config.Notify == 'okok' then
-                    exports['okokNotify']:Alert('SYSTEM', 'Vous portez déjà un vêtement ou vous avez le même vêtement', 5000, 'error', playSound)
+                    exports['okokNotify']:Alert('SYSTEM', locale('alreadywearingsomething'), 5000, 'error', playSound)
                     else
-                    print('Please check your config.lua to ensure you have the correct notification system')
+                    print(locale('NotifySystemWrong'))
                     end
             end
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'êtes pas un homme.', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('wronsexclothes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'êtes pas un homme.', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('wronsexclothes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     end
@@ -844,64 +844,64 @@ RegisterCommand("clothesmenu", function(source, args, rawCommand)
         title = 'Menu Vêtements',
         options = {
             {
-                title = '🧥 | T-Shirt',
+                title = locale('titletorsomenu'),
                 event = 'sdw-clothes:client:shirt',
-                description = 'Sélectionner pour retirer votre T-Shirt',
+                description = locale('descriptiontorsomenu'),
             },
             {
-                title = '👖 | Pantalon',
+                title = locale('titlepantsmenu'),
                 event = 'sdw-clothes:client:pants',
-                description = 'Sélectionner pour retirer votre pantalon',
+                description = locale('descriptionpantsmenu'),
             },
             {
-                title = '👟 | Chaussures',
+                title = locale('titleshoesmenu'),
                 event = 'sdw-clothes:client:shoes',
-                description = 'Sélectionner pour retirer vos chaussures',
+                description = locale('descriptionshoesmenu'),
             },
             {
-                title = '😷 | Masque',
+                title = locale('titlemaskmenu'),
                 event = 'sdw-clothes:client:mask',
-                description = 'Sélectionner pour retirer votre masque',
+                description = locale('descriptionmaskmenu'),
             },
             {
-                title = '🎩 | Chapeau',
+                title = locale('titlehatsmenu'),
                 event = 'sdw-clothes:client:hat',
-                description = 'Sélectionner pour retirer votre chapeau',
+                description = locale('descriptionhatsmenu'),
             },
             {
-                title = '🎒 | Sac',
+                title = locale('titlebagsmenu'),
                 event = 'sdw-clothes:client:bag',
-                description = 'Sélectionner pour retirer votre sac',
+                description = locale('descriptionbagsmenu'),
             },
             {
-                title = '👓 | Lunettes',
+                title =  locale('titleglassesmenu'),
                 event = 'sdw-clothes:client:glasses',
-                description = 'Sélectionner pour retirer vos lunettes',
+                description = locale('descriptionglassesmenu'),
             },
             {
-                title = '🦺 | Gilet',
+                title = locale('titlevestmenu'),
                 event = 'sdw-clothes:client:vest',
-                description = 'Sélectionner pour retirer votre gilet',
+                description = locale('descriptionvestmenu'),
             },
             {
-                title = '🎧 | Accessoires d\'oreilles',
+                title = locale('titleearaccessoriesmenu'),
                 event = 'sdw-clothes:client:ears',
-                description = 'Sélectionner pour retirer vos accessoires d\'oreilles',
+                description = locale('descriptionearaccessoriesmenu'),
             },
             {
-                title = '🧣 | Chaînes',
+                title = locale('titlechainmenu'),
                 event = 'sdw-clothes:client:chain',
-                description = 'Sélectionner pour retirer vos chaînes',
+                description = locale('descriptionchainmenu'),
             },
             {
-                title = '⌚ | Montre',
+                title = locale('titlewatchmenu'),
                 event = 'sdw-clothes:client:watch',
-                description = 'Sélectionner pour retirer votre montre',
+                description = locale('descriptionwatchmenu'),
             },
             {
-                title = '📿 | Bracelet',
+                title = locale('titlebraceletmenu'),
                 event = 'sdw-clothes:client:wrist',
-                description = 'Sélectionner pour retirer votre bracelet',
+                description = locale('descriptionbraceletmenu'),
             },
             
         },
@@ -960,7 +960,7 @@ AddEventHandler('sdw-clothes:client:shirt', function()
         if DrawableTorso ~= Config.Male.Torso and not IsAnim then
             TriggerEvent('sdw-progressBar:removingClothes', 'sdw_torso')
             IsAnim = true
-            torsoonoff()
+            Torsoonoff()
             SetPedComponentVariation(ped, 11, Config.Male.Torso, 0, 0)
             SetPedComponentVariation(ped, 8,  Config.Male.Shirt, 0, 0)
             if DrawableGloves ~= Config.Male.Gloves then
@@ -970,19 +970,19 @@ AddEventHandler('sdw-clothes:client:shirt', function()
             IsAnim = false
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'avez rien sur le torse', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('nothingontorso'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'avez rien sur le torse', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('nothingontorso'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     elseif gender == 'Female' then
         if DrawableTorso ~= Config.Female.Torso and not IsAnim then
             TriggerEvent('sdw-progressBar:removingClothes', 'sdw_torso')
             IsAnim = true
-            torsoonoff()
-            SetPedComponentVariation(ped, 11, Config.Female.Torso, 0, 0)
+            Torsoonoff()
+            SetPedComponentVariation(ped, 11, Config.Female.Torso, 1, 2)
             SetPedComponentVariation(ped, 8,  Config.Female.Shirt, 0, 0)
             if DrawableGloves ~= Config.Female.Gloves then
                 SetPedComponentVariation(ped, 3, Config.Female.Gloves, 0, 0)
@@ -991,11 +991,11 @@ AddEventHandler('sdw-clothes:client:shirt', function()
             IsAnim = false
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous n\'avez rien sur le torse', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('nothingontorso'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous n\'avez rien sur le torse', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('nothingontorso'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     end
@@ -1017,11 +1017,11 @@ AddEventHandler('sdw-clothes:client:pants', function()
             IsAnim = false
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous ne portez pas de pantalon', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('nothingonpants'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous ne portez pas de pantalon', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('nothingonpants'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     elseif gender == 'Female' then
@@ -1034,11 +1034,11 @@ AddEventHandler('sdw-clothes:client:pants', function()
             IsAnim = false
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous ne portez pas de pantalon', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('nothingonpants'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous ne portez pas de pantalon', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('nothingonpants'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     end
@@ -1061,11 +1061,11 @@ AddEventHandler('sdw-clothes:client:shoes', function()
             IsAnim = false
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous ne portez pas de chaussures', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('nothingonshoes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous ne portez pas de chaussures', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('nothingonshoes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     elseif gender == 'Female' then
@@ -1078,11 +1078,11 @@ AddEventHandler('sdw-clothes:client:shoes', function()
             IsAnim = false
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous ne portez pas de chaussures', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('nothingonshoes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous ne portez pas de chaussures', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('nothingonshoes'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     end
@@ -1104,11 +1104,11 @@ AddEventHandler('sdw-clothes:client:mask', function()
             IsAnim = false
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous ne portez pas de masque', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('nothingonshoes'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous ne portez pas de masque', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('nothingonmask'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     elseif gender == 'Female' then
@@ -1117,16 +1117,15 @@ AddEventHandler('sdw-clothes:client:mask', function()
             IsAnim = true
             maskonoff()
             SetPedComponentVariation(ped, 1, Config.Female.Mask, 0, 2)
-            TriggerEvent('sdw-progressBar:removingClothes', 'sdw_mask')
             TriggerServerEvent('add:clothes', Drawable, Texture, theProp, gender)
             IsAnim = false
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous ne portez pas de masque', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('nothingonmask'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous ne portez pas de masque', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('nothingonmask'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     end
@@ -1147,11 +1146,11 @@ AddEventHandler('sdw-clothes:client:hat', function()
             IsAnim = false
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous ne portez pas de chapeau', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('nothingonhats'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous ne portez pas de chapeau', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('nothingonhats'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     elseif gender == 'Female' then
@@ -1164,11 +1163,11 @@ AddEventHandler('sdw-clothes:client:hat', function()
             IsAnim = false
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous ne portez pas de chapeau', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('nothingonhats'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous ne portez pas de chapeau', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('nothingonhats'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     end
@@ -1190,11 +1189,11 @@ AddEventHandler('sdw-clothes:client:bag', function()
             IsAnim = false
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous ne portez pas de sac', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('nothingonbags'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous ne portez pas de sac', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('nothingonbags'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     elseif gender == 'Female' then
@@ -1207,11 +1206,11 @@ AddEventHandler('sdw-clothes:client:bag', function()
             IsAnim = false
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous ne portez pas de sac', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('nothingonbags'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous ne portez pas de sac', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('nothingonbags'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     end
@@ -1232,11 +1231,11 @@ AddEventHandler('sdw-clothes:client:glasses', function()
             IsAnim = false
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous ne portez pas de lunettes', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('nothingonglasses'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous ne portez pas de lunettes', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('nothingonglasses'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     elseif gender == 'Female' then
@@ -1245,16 +1244,15 @@ AddEventHandler('sdw-clothes:client:glasses', function()
             IsAnim = true
             glassesonoff()
             ClearPedProp(ped, 1)
-            TriggerEvent('sdw-progressBar:removingClothes', 'sdw_glasses')
             TriggerServerEvent('add:clothes', Drawable, Texture, theProp, gender)
             IsAnim = false
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous ne portez pas de lunettes', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('nothingonglasses'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous ne portez pas de lunettes', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('nothingonglasses'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     end
@@ -1276,11 +1274,11 @@ AddEventHandler('sdw-clothes:client:vest', function()
             IsAnim = false
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous ne portez pas de gilet', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('nothingonvest'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous ne portez pas de gilet', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('nothingonvest'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     elseif gender == 'Female' then
@@ -1293,11 +1291,11 @@ AddEventHandler('sdw-clothes:client:vest', function()
             IsAnim = false
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous ne portez pas de gilet', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('nothingonvest'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous ne portez pas de gilet', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('nothingonvest'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     end
@@ -1319,11 +1317,11 @@ AddEventHandler('sdw-clothes:client:ears', function()
             IsAnim = false
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous ne portez pas d\'accessoires sur vos oreilles', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('nothingonearaccessories'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous ne portez pas d\'accessoires sur vos oreilles', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('nothingonearaccessories'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     elseif gender == 'Female' then
@@ -1336,11 +1334,11 @@ AddEventHandler('sdw-clothes:client:ears', function()
             IsAnim = false
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous ne portez pas d\'accessoires sur vos oreilles', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('nothingonearaccessories'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous ne portez pas d\'accessoires sur vos oreilles', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('nothingonearaccessories'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     end
@@ -1361,11 +1359,11 @@ AddEventHandler('sdw-clothes:client:chain', function()
             IsAnim = false
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous ne portez pas de chaîne', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('nothingonchain'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous ne portez pas de chaîne', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('nothingonchain'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     elseif gender == 'Female' then
@@ -1374,16 +1372,15 @@ AddEventHandler('sdw-clothes:client:chain', function()
             IsAnim = true
             chainonoff()
             SetPedComponentVariation(ped, 7, Config.Female.Chain, 0, 2)
-            TriggerEvent('sdw-progressBar:removingClothes', 'sdw_chain')
             TriggerServerEvent('add:clothes', skin1, skin2, theType, gender)
             IsAnim = false
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous ne portez pas de chaîne', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('nothingonchain'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous ne portez pas de chaîne', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('nothingonchain'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     end
@@ -1404,11 +1401,11 @@ AddEventHandler('sdw-clothes:client:watch', function()
             IsAnim = false
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous ne portez pas de montre', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('nothingonwatch'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous ne portez pas de montre', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('nothingonwatch'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     elseif gender == 'Female' then
@@ -1421,11 +1418,11 @@ AddEventHandler('sdw-clothes:client:watch', function()
             IsAnim = false
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous ne portez pas de montre', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('nothingonwatch'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous ne portez pas de montre', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('nothingonwatch'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     end
@@ -1447,11 +1444,11 @@ AddEventHandler('sdw-clothes:client:wrist', function()
             IsAnim = false
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous ne portez pas de bracelet', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('nothingonbracelet'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous ne portez pas de bracelet', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('nothingonbracelet'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     elseif gender == 'Female' then
@@ -1464,11 +1461,11 @@ AddEventHandler('sdw-clothes:client:wrist', function()
             IsAnim = false
         else
             if Config.Notify == 'ox' then
-                lib.notify('error_input_chain1', 'SYSTEM', 'Vous ne portez pas de bracelet', 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
+                lib.notify('error_input_chain1', 'SYSTEM', locale('nothingonbracelet'), 5000, 'top', {backgroundColor = '#FF4B4E', color = '#FFFFFF'}, 'ban', '#FFFFFF')
                 elseif Config.Notify == 'okok' then
-                exports['okokNotify']:Alert('SYSTEM', 'Vous ne portez pas de bracelet', 5000, 'error', playSound)
+                exports['okokNotify']:Alert('SYSTEM', locale('nothingonbracelet'), 5000, 'error', playSound)
                 else
-                print('Please check your config.lua to ensure you have the correct notification system')
+                print(locale('NotifySystemWrong'))
                 end
         end
     end
@@ -1480,14 +1477,14 @@ function IsMpPed(ped)
 	local CurrentModel = GetEntityModel(ped)
 	if CurrentModel == Male then 
         return "Male" 
-    elseif CurrentModel == Female then 
-        return "Female" 
-    else 
-        return false 
+    elseif CurrentModel == Female then
+        return "Female"
+    else
+        return false
     end
 end
 
-function torsoonoff()
+function Torsoonoff()
     SDW.PlayAnim("clothingtie", "try_tie_positive_a", 1500)
 end
 			

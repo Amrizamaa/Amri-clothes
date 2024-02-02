@@ -17,8 +17,8 @@ Config.Male = {
 }
 
 Config.Female = {
-    Torso = 15,
-    Jeans = 14,
+    Torso = 22,
+    Jeans = 19,
     Shoes = 5,
     Bag = 0,
     Gloves = 15,
