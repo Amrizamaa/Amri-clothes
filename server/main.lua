@@ -11,7 +11,7 @@ RegisterServerEvent('add:clothes')
 AddEventHandler('add:clothes', function(skin1, skin2, type, gender)
 	local _source = source
 	local theType = type
-	local metadata = {gender = gender,accessories = skin1, accessories2 = skin2, description = '[Gender: '..gender..'] ['..theType..' 1 #'..skin1..'] - ['..theType..' 2 #'..skin2..']'}
+	local metadata = {gender = gender,accessories = skin1, accessories2 = skin2, description = '[Homme/Femme: '..gender..'] ['..theType..' 1 #'..skin1..'] - ['..theType..' 2 #'..skin2..']'}
 	local HasItem = ox_inventory:Search(_source, 'slots', theType)
 	if json.encode(HasItem) == '[]' then
 		ox_inventory:AddItem(_source, theType, 1, metadata)
